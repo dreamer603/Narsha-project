@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Map;
 using UnityEngine;
 
-public class BalttanState : StructureState
+public class BalltanState : StructureState
 {
     public override void OnSpawn()
     {

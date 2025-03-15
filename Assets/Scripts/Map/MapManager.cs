@@ -69,7 +69,6 @@ namespace Map
             }
 
             structureController = gameObject.GetComponent<StructureController>();
-            moveStructures = gameObject.AddComponent<MoveStructures>();
 
             _structureState = StructureStates.Idle;
             
