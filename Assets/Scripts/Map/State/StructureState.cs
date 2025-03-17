@@ -11,6 +11,7 @@ public abstract class StructureState : MonoBehaviour
     [SerializeField] protected float _duration = 1f;
     [SerializeField] protected float _reDuration = 5f;
     private GameObject[] bossObjects;  // 보스 구조물 오브젝트 ([0]: fence / [1]: castle / [2]: portal)
+    private bool _isStructure;
     
     private void Awake()
     {
@@ -39,5 +40,12 @@ public abstract class StructureState : MonoBehaviour
 
         Vector3 finalPosition = new Vector3(bossObjects[objectIndex].transform.position.x, targetY, bossObjects[objectIndex].transform.position.z);
         bossObjects[objectIndex].transform.position = finalPosition;
+    }
+    
+
+    public bool IsStructure
+    {
+        get { return _isStructure; }
+        set { _isStructure = value;  }
     }
 }

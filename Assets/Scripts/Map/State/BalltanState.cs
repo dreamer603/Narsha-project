@@ -10,14 +10,14 @@ public class BalltanState : StructureState
     {
         StartCoroutine(MoveStructure(0, _duration, 1f));
         StartCoroutine(MoveStructure(2, _duration, 1f));
-        structureController.isBalltanLive = true;
+        IsStructure = true;
         MapManager.Instance.poolManager.SetActive(false);
     }
 
     public override void OnDie()
     {
         StartCoroutine(MoveStructure(0, _reDuration, -100f));
-        structureController.isBalltanLive = false;
+        IsStructure = false; 
         MapManager.Instance.poolManager.SetActive(true);
     }
 }

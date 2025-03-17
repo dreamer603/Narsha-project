@@ -8,7 +8,6 @@ public class Boss3State : StructureState
     public override void OnSpawn()
     {
         StartCoroutine(MoveStructure(2, _duration, 1f));
-        structureController.isBoss2Live = true;
         MapManager.Instance.poolManager.SetActive(false);
     }
 

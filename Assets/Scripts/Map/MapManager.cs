@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -31,17 +32,6 @@ namespace Map
         private float _movePos; // 타일 이동값
 
         public StructureController structureController;
-
-        enum StructureStates
-        {
-            Idle,
-            Balltan,
-            Boss2,
-            Boss3
-        }
-
-        private StructureStates _structureState;
-        
         
         private GameDataManager _gmScript; // 게임 데이터 매니저 참조
 
@@ -69,8 +59,6 @@ namespace Map
             }
 
             structureController = gameObject.GetComponent<StructureController>();
-
-            _structureState = StructureStates.Idle;
             
             _dirFront = tileSize / 2;
             _dirBack = tileSize / 2 * -1;
@@ -99,7 +87,7 @@ namespace Map
 
         void Update()
         {
-            
+            structureController.UpdateState();
 
             _posX = player.gameObject.transform.position.x;
             _posZ = player.gameObject.transform.position.z;
@@ -155,5 +143,6 @@ namespace Map
                 mapTile[sl[i + 2]] = dummy;
             }
         }
+        
     }
 }
